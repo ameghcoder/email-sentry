@@ -3,7 +3,7 @@
 [![Author](https://img.shields.io/badge/Author-@ameghcoder-blue?logo=github)](https://github.com/ameghcoder)
 [![NPM version](https://img.shields.io/npm/v/email-sentry?color=blue&label=npm)](https://www.npmjs.com/package/email-sentry)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
-[![Tests](https://github.com/yourusername/email-sentry/actions/workflows/test.yml/badge.svg)](https://github.com/yourusername/email-sentry/actions/workflows/test.yml)
+[![Run Tests](https://github.com/ameghcoder/email-sentry/actions/workflows/test.yml/badge.svg)](https://github.com/ameghcoder/email-sentry/actions/workflows/test.yml)
 
 ---
 
