@@ -1,6 +1,6 @@
 {
   "name": "email-sentry",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An email utility to validate addresses, detect disposable domains, and normalize Gmail aliases for more secure user identification.",
   "main": "./dist/index.ts",
   "types": "./dist/index.d.ts",
@@ -36,5 +36,9 @@
   },
   "dependencies": {
     "validator": "^13.15.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ameghcoder/email-sentry/"
   }
 }

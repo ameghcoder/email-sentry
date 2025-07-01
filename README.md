@@ -15,17 +15,17 @@
 
 ---
 
-## ✨ Features
+## Features
 
-- ✅ Simple API
-- 📦 Tiny & dependency-light
-- 🛡️ Helps prevent spam/bots during user signups
-- 🔍 Supports thousands of disposable email providers
-- 🔧 Built in TypeScript (fully typed)
+- Simple API
+- Tiny & dependency-light
+- Helps prevent spam/bots during user signups
+- Supports thousands of disposable email providers
+- Built in TypeScript (fully typed)
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 npm install email-sentry
@@ -35,7 +35,7 @@ yarn add email-sentry
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ```ts
 import { emailSentry } from "email-sentry";
@@ -60,7 +60,7 @@ console.log(result);
 
 ---
 
-## ⚙️ Options
+## Options
 
 | Option                | Type      | Description                                       |
 |------------------------|-----------|---------------------------------------------------|
@@ -70,7 +70,7 @@ console.log(result);
 
 ---
 
-## 🧪 Testing
+## Testing
 
 Run all tests with:
 
@@ -86,14 +86,14 @@ npm run test:watch
 
 ---
 
-## 📄 License
+## License
 
 MIT © [Yashraj](https://github.com/ameghcoder)
 
 ---
 
-## 🙋‍♂️ Author
+## Author
 
-Made with ❤️ by [**Yashraj**](https://github.com/ameghcoder)
+Made with ❤️ by [**Yashraj**](https://linkedin.com/in/yrjdeveloper)
 
 If you like this project, consider ⭐️ starring the repo or sharing it. It helps a lot!
