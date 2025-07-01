@@ -1,0 +1,40 @@
+{
+  "name": "email-sentry",
+  "version": "1.0.0",
+  "description": "An email utility to validate addresses, detect disposable domains, and normalize Gmail aliases for more secure user identification.",
+  "main": "./dist/index.ts",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "text:watch": "vitest"
+  },
+  "keywords": [
+    "email",
+    "validator",
+    "disposable",
+    "temporary",
+    "normalizer",
+    "gmail",
+    "typescript"
+  ],
+  "author": {
+    "name": "Yashraj Yadav",
+    "url": "https://github.com/ameghcoder"
+  },
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/validator": "^13.15.2",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "validator": "^13.15.15"
+  }
+}
