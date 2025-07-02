@@ -1,6 +1,6 @@
 import { isDisposableEmail } from "./isDisposableEmail";
-import { normalizeAliasIfGmail } from "./normalizeGmailAlias";
 import { validateEmail } from "./validateEmail";
+import { normalizeEmailAliases } from "./normalizeEmailAlias";
 
 export interface EmailSentryResult {
   inputEmail: string;
@@ -13,7 +13,11 @@ export interface EmailSentryResult {
 
 interface EmailSentryOptions {
   validate?: boolean;
+  /**
+   * @deprecated normalizeGmailAliases, use normalizeEmail instead for better normalization.
+   */
   normalizeGmailAliases?: boolean;
+  normalizeEmail?: boolean;
   checkDisposable?: boolean;
 }
 
@@ -30,27 +34,39 @@ export function emailSentry(
     const {
       validate = false,
       normalizeGmailAliases = false,
+      normalizeEmail = false,
       checkDisposable = false,
     } = options || {};
 
-    if (!validate && !normalizeGmailAliases && !checkDisposable) {
+    const shouldNormalize = normalizeEmail || normalizeGmailAliases;
+
+    if (!validate && !shouldNormalize && !checkDisposable) {
       return {
         ...result,
         message:
-          "You must enable at least one of the following: validate, normalizeGmailAliases, checkDisposable",
+          "You must enable at least one of the following: validate, normalizeGmailAliases, normalizeEmail, checkDisposable",
       };
     }
 
     if (validate) {
       result.isValid = validateEmail(email);
+
+      if (!result.isValid) {
+        return result;
+      }
     }
 
     if (checkDisposable) {
       result.isDisposable = isDisposableEmail(email);
     }
 
-    if (normalizeGmailAliases) {
-      result.outputEmail = normalizeAliasIfGmail(email);
+    if (shouldNormalize) {
+      if (normalizeGmailAliases && !normalizeEmail) {
+        console.warn(
+          `[email-sentry] ⚠️ "normalizeGmailAliases" is deprecated. Please use "normalizeEmail" instead.`
+        );
+      }
+      result.outputEmail = normalizeEmailAliases(email);
     }
 
     return {

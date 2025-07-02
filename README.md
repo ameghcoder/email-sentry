@@ -11,7 +11,21 @@
 
 - ✅ Validate email format
 - 🚫 Detect disposable/temp email domains
-- 📩 Normalize Gmail aliases (e.g. `user+promo@gmail.com` → `user@gmail.com`)
+- 📩 Normalize Gmail aliases, e.g.
+  - `user+promo@gmail.com` → `user@gmail.com`
+  - `E.X.A.M+test@gmail.com` → `example@gmail.com`
+  - `User.Name+second@yahoo.com` → `user.name@yahoo.com` (dots preserved in some clients)
+
+---
+
+## Updates
+
+- `1.0.2 version`
+  - supports only the Gmail normalization
+  - Contains 4.0k disposable domain name to validate
+- `1.1.0 version`
+  - supports @gmail.com, @yahoo.com, @outlook.com, @hotmail.com, @live.com, @msn.com, @icloud.com, @protonmail.com, @zoho.com (now a wide range to protect your website from spoofing and fake accounts)
+  - Contains 4.5k disposable domain name to validate
 
 ---
 
@@ -43,8 +57,12 @@ import { emailSentry } from "email-sentry";
 const result = emailSentry("user+promo@mailinator.com", {
   validate: true,
   checkDisposable: true,
-  normalizeGmailAliases: true,
+  normalizeGmailAliases: true, //deprecated
+  normalizeEmailAliases: true // Use this instead of normalizeGmailAliases
 });
+/*
+normalizeGmailAliases and normalizeEmailAliases gives the same result
+*/
 
 console.log(result);
 /*
@@ -66,7 +84,8 @@ console.log(result);
 |------------------------|-----------|---------------------------------------------------|
 | `validate`             | `boolean` | Validates email using the powerful email validator package   |
 | `checkDisposable`      | `boolean` | Checks against known disposable email domains, contains 5000+ disposable domains data   |
-| `normalizeGmailAliases` | `boolean` | Removes `+something` from Gmail addresses and prevent the same email address to use to create account         |
+| @deprecated `normalizeGmailAliases` | `boolean` | Removes `+something` from Gmail addresses and prevent the same email address to use to create account, use `normalizeEmailAliases` instead         |
+| `normalizeEmailAliases` | `boolean` | Removes `+something` from All email clients like yahoo, zoho, msn, outlook and more client email addresses and prevent the same email address to use to create account         |
 
 ---
 

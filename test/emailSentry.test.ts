@@ -14,9 +14,9 @@ describe("emailSentry()", () => {
     expect(result.isDisposable).toBe(true);
   });
 
-  it("should normalize Gmail alias", () => {
+  it("should normalize Email alias", () => {
     const result = emailSentry("abc+xyz@gmail.com", {
-      normalizeGmailAliases: true,
+      normalizeEmail: true,
     });
     expect(result.outputEmail).toBe("abc@gmail.com");
   });
