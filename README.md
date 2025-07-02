@@ -58,10 +58,10 @@ const result = emailSentry("user+promo@mailinator.com", {
   validate: true,
   checkDisposable: true,
   normalizeGmailAliases: true, //deprecated
-  normalizeEmailAliases: true // Use this instead of normalizeGmailAliases
+  normalizeEmail: true // Use this instead of normalizeGmailAliases
 });
 /*
-normalizeGmailAliases and normalizeEmailAliases gives the same result
+normalizeGmailAliases and normalizeEmail gives the same result
 */
 
 console.log(result);
@@ -84,8 +84,8 @@ console.log(result);
 |------------------------|-----------|---------------------------------------------------|
 | `validate`             | `boolean` | Validates email using the powerful email validator package   |
 | `checkDisposable`      | `boolean` | Checks against known disposable email domains, contains 5000+ disposable domains data   |
-| @deprecated `normalizeGmailAliases` | `boolean` | Removes `+something` from Gmail addresses and prevent the same email address to use to create account, use `normalizeEmailAliases` instead         |
-| `normalizeEmailAliases` | `boolean` | Removes `+something` from All email clients like yahoo, zoho, msn, outlook and more client email addresses and prevent the same email address to use to create account         |
+| **@deprecated** `normalizeGmailAliases` | `boolean` | Removes `+something` from Gmail addresses and prevent the same email address to use to create account, use `normalizeEmail` instead         |
+| `normalizeEmail` | `boolean` | Removes `+something` from All email clients like yahoo, zoho, msn, outlook and more client email addresses and prevent the same email address to use to create account         |
 
 ---
 
