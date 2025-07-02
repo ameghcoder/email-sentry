@@ -1,6 +1,6 @@
 {
   "name": "email-sentry",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "An email utility to validate addresses, detect disposable domains, and normalize Gmail aliases for more secure user identification.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
